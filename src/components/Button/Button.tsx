@@ -6,7 +6,9 @@ export interface ButtonProps {
 
 const Button = (props: ButtonProps) => {
   return (
-    <button className={"border-gray-300 border rounded"}>{props.label}</button>
+    <button className={"bg-cyan-500 py-2 px-8 rounded hover:bg-cyan-400"}>
+      {props.label}
+    </button>
   );
 };
 

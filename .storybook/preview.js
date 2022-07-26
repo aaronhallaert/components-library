@@ -1,12 +1,16 @@
-import React from "react";
-import { addDecorator } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
-import Layout from "./Layout";
+// .storybook/preview.js
 
-addDecorator((storyFn) => <Layout>{storyFn()}</Layout>);
-addDecorator(
-  withInfo({
-    inline: true,
-    propTablesExclude: [Layout],
-  })
-);
+import "../src/styles/tailwind.css";
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  previewTabs: {
+    "storybook/docs/panel": { index: -1 },
+  },
+};
